@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>DashBoard</title>
+  </head>
+  <body>
+
+    <!-- Navbar Part -->
+    <div class="header">
+      <a href="index.html" class="logo" id="logo">DashBoard</a>
+      <div class="header-right">
+        <a class="active" href="index.html" id="a1"><i class="fa fa-fw fa-home"></i>Home</a>
+        <a href="#contact" class="a2"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+        <a href="#about" class="a3"> <i class="fa fa-map-o" aria-hidden="true"></i>Maps</a>
+      </div>
+    </div>
+
+    <!-- Slider Bar Part -->
+    <div class="sidenav">
+      <a href="#about" class="a4"
+        >About
+        <span class="material-symbols-outlined"> help </span>
+      </a>
+      <a href="#services" class="a5"
+        >Services
+        <span class="material-symbols-outlined"> manage_accounts </span>
+      </a>
+      <a href="#clients" class="a6"
+        >Clients
+        <span class="material-symbols-outlined"> assignment_ind </span>
+      </a>
+      <a href="#contact" class="a7">Analysis
+        <span class="material-symbols-outlined">
+          insert_chart
+        </span>
+      </a>
+      <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">NDVI</a>
+        <a href="#">EVI</a>
+        <a href="#">AWIFS</a>
+      </div>
+      
+      <button class="openbtn" onclick="openNav()"> <span class="material-symbols-outlined">
+        arrow_right
+        </span></button>
+    </div>
+    
+
+    <span class="icont">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d119075.16068558168!2d79.11178240000001!3d21.1484672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1660816461187!5m2!1sen!2sin"
+        width="1490"
+        height="480"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe
+    ></span>
+
+
+<!-- Dropdown -->
+<div class="container">
+  <h3>Recorded trends of Green Cover <br> Change</h3>
+  <div class="select-box">
+    <div class="options-container">
+      <div class="option">
+        <input
+          type="radio"
+          class="radio"
+          id="automobiles"
+          name="category"
+        />
+        <label for="automobiles">Forest Cover Change</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" class="radio" id="film" name="category" />
+        <label for="film">Forest Cover</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" class="radio" id="science" name="category" />
+        <label for="science">Plant Health</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" class="radio" id="art" name="category" />
+        <label for="art">Plant Density</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" class="radio" id="music" name="category" />
+        <label for="music">Low Dense</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" class="radio" id="travel" name="category" />
+        <label for="travel">Sligntly Dense</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" class="radio" id="sports" name="category" />
+        <label for="sports">Donse</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" class="radio" id="news" name="category" />
+        <label for="news">Stressed</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" class="radio" id="tutorials" name="category" />
+        <label for="tutorials">Very Healthy</label>
+      </div>
+    </div>
+
+    <div class="selected">
+      Green Cover Change
+    </div>
+  </div>
+</div>
+
+
+
+
+    <span class="row">
+      <img src="plant.png" alt="Snow"  class="img1"/>
+      <img src="chart.png" alt="Snow"   class="img2"/>
+      <img src="chart.png" alt="Snow"  class="img3"/>
+      
+    </span>
+    <script src="main.js"></script>
+  </body>
+</html>
