@@ -37,8 +37,16 @@
 
     <style>
         #map{
-            height:850px;
+            height:650px;
             max-width:100%;
+        }
+        #select_name{
+            width:15.6rem;
+            height:2rem;
+        }
+        #select_nameone{
+            width:15.6rem;
+            height:2rem;
         }
     </style>
    
@@ -49,7 +57,7 @@
     <!-- Sidebar  -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3>©Micronet</h3>
+            <h3>Micronet</h3>
         </div>
 
         <ul class="list-unstyled components">
@@ -57,131 +65,21 @@
             <li class="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">States</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <select id="select_name"> 
-                        <option>select the you want</option>
+                    <select id="select1"> 
+                        <option selected disabled="true"  id="select_option">-- select the you want --</option>
+                        {% for answer in StatesModel%}
+                        <option value="{{answer.pid}}">{{answer.state}}</option>
+                        {% endfor %}
                     </select>
-                    <li>
-                        <a href="#" onclick="myFunction()" style="color: #fff;">Andhra Pradesh</a>
-                    </li>
-                    <li>
-                        <a href="#">Arunachal Pradesh</a>
-                    </li>
-                    <li>
-                        <a href="#">Bihar</a>
-                    </li>
-                    <li>
-                        <a href="#">Chhattisgarh</a>
-                    </li>
-                    <li>
-                        <a href="#">Goa</a>
-                    </li>
-                    <li>
-                        <a href="#">Gujarat</a>
-                    </li>
-                    <li>
-                        <a href="#">Haryana</a>
-                    </li>
-                    <li>
-                        <a href="#">Himachal Pradesh</a>
-                    </li>
-                    <li>
-                        <a href="#">Jharkhand</a>
-                    </li>
-                    <li>
-                        <a href="#">Karnataka</a>
-                    </li>
-                    <li>
-                        <a href="#">Kerala</a>
-                    </li>
-                    <li>
-                        <a href="#">Madhya Pradesh</a>
-                    </li>
-                    <li>
-                        <a href="#" onclick="Maharashtra()">Maharashtra</a>
-                    </li>
-                    <li>
-                        <a href="#">Manipur</a>
-                    </li>
-                    <li>
-                        <a href="#">Meghalaya</a>
-                    </li>
-                    <li>
-                        <a href="#">Mizoram</a>
-                    </li>
-                    <li>
-                        <a href="#">Nagaland</a>
-                    </li>
-                    <li>
-                        <a href="#">Odisha</a>
-                    </li>
-                    <li>
-                        <a href="#">Punjab</a>
-                    </li>
-                    <li>
-                        <a href="#">Rajasthan</a>
-                    </li>
-                    <li>
-                        <a href="#">Sikkim</a>
-                    </li>
-                    <li>
-                        <a href="#">Tamil Nadu</a>
-                    </li>
-                    <li>
-                        <a href="#">Telangana</a>
-                    </li>
-                    <li>
-                        <a href="#">Tripura</a>
-                    </li>
-                    <li>
-                        <a href="#">Uttarakhand</a>
-                    </li>
-                    <li>
-                        <a href="#">Uttar Pradesh</a>
-                    </li>
-                    <li>
-                        <a href="#">Andaman and Nicobar Islands</a>
-                    </li>
-                    <li>
-                        <a href="#">Jammu and Kashmir</a>
-                    </li>
-                    <li>
-                        <a href="#">Lakshadweep</a>
-                    </li>
+                    <select id="select2"> 
+                        <option  selected disabled="true" id="select_option">-- select the you want --</option>
+                        {% for results in DistrictsModel%}
+                        <option value="{{results.pid}}">{{results.dist}}</option>
+                        {% endfor %}
+                    </select>
                 </ul>
             </li>
-           {% comment %}  <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li> {% endcomment %}
         </ul>
-
-        {% comment %} <ul class="list-unstyled CTAs">
-            <li>
-                <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
-            </li>
-            <li>
-                <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
-            </li>
-        </ul> {% endcomment %}
     </nav>
 
     <!-- Page Content  -->
@@ -254,16 +152,16 @@
     {% comment %} <script src='D:\Projects\Query_project\states\district\static\main.js'></script> {% endcomment %}
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
     <!-- jQuery geoserver cdn  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="static/L.Geoserver.js"></script>
-     <!-- jQuery CDN - Slim version (=without AJAX) -->
-     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-     <!-- Popper.JS -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-     <!-- Bootstrap JS -->
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-     <!-- jQuery Custom Scroller CDN -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="static/L.Geoserver.js"></script>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
  
      
 
@@ -272,7 +170,66 @@
 
 
 <script>
+  
+   $(document).ready(function(){
+ 
+        var $idone = $("#select1");
+            $idtwo = $("#select2");
+            
+            $options = $idtwo.find('option');
+            $idone.on('change',function(){
+            $idtwo.html($options.filter('[value="'+ this.value +'"]'));
+ 
+            //Sort Dropdown List Alphabetically for first dropdown id #select2 
+            $(function() {
+            // choose target dropdown
+            var select = $('#select2');
+            select.html(select.find('option').sort(function(x, y) {
+            // to change to descending order switch "<" for ">"
+            return $(x).text() > $(y).text() ? 1 : -1;
+        }));
+
+        // select default item after sorting (first item)
+        // $('select').get(0).selectedIndex = 0;
+        });
+        var selectedCountry = $(this).children("#select1 option:selected").val();  
+        alert ("You have selected the states - " + selectedCountry);
+       // zoom to layers
+       //$('#select1').click(function () {
+            //map.setView([19.7515, 75.7139], 7),
+       //     var layer = selectedCountry;
+       //     map.fitBounds(layer.getBounds());
+       // })
+        }).trigger('change'); 
+        
+    });
+     
+    {% comment %} $("#idShow").change( function(){
+        $.get("fromDB.php",{ id: $(this).val() }, function(data){
+              // do something with data to fill in your other fileds.
+        })
+    }) {% endcomment %}
+
+    //Sort Dropdown List Alphabetically for first dropdown id #select1 
+    $(function() {
+        // choose target dropdown
+        var select = $('#select1');
+        select.html(select.find('option').sort(function(x, y) {
+          // to change to descending order switch "<" for ">"
+          return $(x).text() > $(y).text() ? 1 : -1;
+        }));
+      
+        // select default item after sorting (first item)
+        // $('select').get(0).selectedIndex = 0;
+    });
     
+    
+   
+   
+    
+
+    
+    // for silder bar
     $(document).ready(function () {
         $("#sidebar").mCustomScrollbar({
             theme: "minimal"
@@ -282,16 +239,21 @@
             $('#sidebar, #content').toggleClass('active');
             $('.collapse.in').toggleClass('in');
             $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-        });
+        }).trigger('change');
     });
 
    
+
+
 
         
         var map = L.map('map').setView([20.5937, 78.9629], 5.4);
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19,
             attribution: '©Micronet Solutions'}).addTo(map);
-            
+
+
+
+           {% comment %}             
             async function load_shapefile(){
                 let url = "StatesViewSet"
                 const response = await fetch(url)
@@ -299,11 +261,11 @@
                 console.log(shape_obj);
                 return shape_obj;
             }
-            load_shapefile().then(L.geoJson).then(map.addLayer.bind(map));
+            load_shapefile().then(L.geoJson).then(map.addLayer.bind(map)); {% endcomment %}
        
-            {% comment %} var dropdowndata = json.features.forEach(function(feature){
-                $('#select_name').append('<option value="'+feature.properties.state+'">'+feature.properties.state+'</option>');
-            }); {% endcomment %}
+            {% comment %} var dropdowndata = features.forEach(function(feature){
+                $('#select1').append('<option value="'+feature.properties.state+'">'+feature.properties.state+'</option>');
+            });  {% endcomment %}
 
 
             {% comment %} var wmsLayer = L.Geoserver.wms("http://localhost:8080/geoserver/wms", {
@@ -328,14 +290,29 @@
             layers: "raster:mh_total_dist",
         });
         wmsLayer.addTo(map);
-        } {% endcomment %}
-        
+        }
+         {% endcomment %}
         
 
        
                   
-
-
+         
+        // Working
+   
+        async function load_shapefile() {
+            let url = "{% url 'StateDissolveViewSet' %}"
+            const response = await fetch(url)
+            const shape_obj = await response.json();
+            console.log(shape_obj);
+            
+            return shape_obj;
+            
+        }
+        load_shapefile().then(L.geoJson).then(map.addLayer.bind(map));
+       
+        
+        
+        
         {% comment %} async function load_shapefile() {
             let url = "{% url 'DistrictsViewSet' %}"
             const response = await fetch(url)
@@ -343,9 +320,7 @@
             console.log(shape_obj);
             return shape_obj;
         }
-
         load_shapefile().then(L.geoJson).then(map.addLayer.bind(map)); {% endcomment %}
-
 
 
         {% comment %} async function load_shapefile() {
@@ -355,21 +330,144 @@
             console.log(shape_obj);
             return shape_obj;
         }
-
         load_shapefile().then(L.geoJson).then(map.addLayer.bind(map)); {% endcomment %}
 
 
+{% comment %}     
+        $(document).ready(function(){
+ 
+            var $idone = $("#select1");
+                
+                
+                //$options = $idtwo.find('option');
+                $idone.on('change',function(){
+                    $idone.fire('click');  // 'clicks' on state name from search
+                    var layer = $idone;
+                    map.fitBounds(layer.getBounds());  // zooms to selected poly
+                });
+                //$idtwo.html($options.filter('[value="'+ this.value +'"]'));
+        }
+         {% endcomment %}
 
+        
+    async function load_shape() {
+        let url1 = "{% url 'StateDissolveViewSet' %}"
+        const response = await fetch(url1)
+        const shape_obj1 = await response.json();
+        console.log(shape_obj1);
+            
+        return shape_obj1;
+            
+    // Set style function that sets fill color property
+    function style(feature) {
+        return {
+            fillColor: 'green', 
+            fillOpacity: 0.5,  
+            weight: 2,
+            opacity: 1,
+            color: '#ffffff',
+            dashArray: '3'
+        };
+    }
+    var highlight = {
+        'fillColor': 'yellow',
+        'weight': 2,
+        'opacity': 1
+    };
+    
+        
+        
+    function forEachFeature(feature, layer) {
+    // Tagging each state poly with their name for the search control.
+        layer._leaflet_id = feature.properties.state;
+    
+        var popupContent = "<p><b>STATE: </b>"+ feature.properties.state +
+            "</br>GID: "+ feature.properties.gid +
+            "</br>PID: "+ feature.properties.pid;
+    
+        layer.bindPopup(popupContent);
+    
+        layer.on("click", function (e) { 
+            stateLayer.setStyle(style); //resets layer colors
+            layer.setStyle(highlight);  //highlights selected.
+        }); 
+        
+    }
+    
+    	
+    // Null variable that will hold layer
+    var stateLayer = L.geoJson(null, {onEachFeature: forEachFeature, style: style});
+    $.getJSON(shape_obj1, function(data) {
+        stateLayer.addData(data);
+	
+        for (i = 0; i < data.features.length; i++) {  //loads State Name into an Array for searching
+            arr1.push({label:data.features[i].properties.state, value:""});
+        }
+       addDataToAutocomplete(arr1);  //passes array for sorting and to load search control.
+    });
 
+    stateLayer.addTo(map);
 
-        {% comment %} slider bar js  {% endcomment %}
+    }
+    load_shape();
+    
 
-       
-
+        
        
 </script>
 
 </body>
 </html>
 
+{% comment %} var source;
+        let value = $("#select1 option:selected").val();
+        console.log("You have selected Route " + value + ".");
+        var query = "";
+        if(value == 'all'){
+            query = ('SELECT * FROM state_dissolve');
+        } else {
+            query = ("SELECT * FROM state_dissolve WHERE state = '" + value + "'");
+        };
+        source.querySet(query).then(function() {
+            map.getBounds(source);
+            map.setBounds(getBounds);
+        });
+ 
+ {% endcomment %}
 
+
+
+        {% comment %} document.getElementById('select1').addEventListener("change", function (e) {
+            input = e.currentTarget.selectedOptions[0].attributes[0].value;
+            var selectquery = 'StatesModel'
+            console.log(selectquery);
+            return  fetch(`selectquery = SELECT * FROM state_dissolve WHERE state '${input}'`)
+            .then((resp) => resp.json())
+            .then((response) => {
+                geojsonLayer = L.geoJson(response)
+                map.fitBounds(geojsonLayer.getBounds());
+            })
+        }); {% endcomment %}
+
+        
+    {% comment %}
+     {% endcomment %}
+
+
+
+    {% comment %} 
+    var leafletIdJsonProperty={}
+
+    function MatchJSONProperty(jsonData, leafletLayer){
+        for (feature in leafletLayer._layers){
+            leafletIdJsonProperty[leafletLayer._layers[feature].feature.properties.id] = parsenInt(feature)
+        }
+    }
+    
+    $("#select1").on('change', function(e){
+        var value = $(this).find(':selected').val();
+        var boundArea = parsenInt(value);
+        map.fitBounds(boundaryLayer._layers[leafletIdJsonProperty[boundArea]]._bounds);
+    });
+    
+    {% endcomment %}

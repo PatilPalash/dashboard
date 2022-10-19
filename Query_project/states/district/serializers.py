@@ -1,16 +1,16 @@
 from rest_framework_gis.serializers import GeoFeatureModelSerializer
 
 
-from . models import  States
+from . models import  StateDissolve
 from . models import Districts
 from . models import Tahesil
 
 
 
-class StatesSubSerializer(GeoFeatureModelSerializer):
+class StateDissolveSubSerializer(GeoFeatureModelSerializer):
 
 	class Meta:
-		model = States
+		model = StateDissolve
 		fields = '__all__'
 		geo_field = 'geom'
 
